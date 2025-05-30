@@ -1,0 +1,113 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
+const Home = () => {
+
+  function openMenu() {
+    document.body.classList += "menu--open";
+  }
+  function closeMenu() {
+    document.body.classList.remove("menu--open");
+  }
+
+  return (
+    <section id="landing">
+      <div className="bg-img" id="bg-img">
+        <nav>
+          <div className="nav__container">
+            <h1
+              className="
+          page__title 
+          page__title--hover-effect page__title--hover-effect--yellow"
+            >
+              MovieFlix
+            </h1>
+            <ul className="nav__link--list">
+              <li>
+                <a
+                  href="#home"
+                  className="
+              nav__link 
+              nav__link--hover-effect nav__link--hover-effect--yellow"
+                >
+                  Home
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  className="
+              nav__link 
+              nav__link--hover-effect nav__link--hover-effect--yellow"
+                >
+                  Contact
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#movies"
+                  className="
+              nav__link  
+              nav__link--hover-effect
+              nav__link--hover-effect--yellow
+              nav__link--primary"
+                >
+                  Movies
+                </a>
+              </li>
+            </ul>
+            <button className="btn__menu" onClick={() => openMenu()}>
+              <i className="fa-solid fa-bars"></i>
+            </button>
+            <div className="menu__backdrop">
+              <button
+                className="btn__menu btn__menu--close"
+                onClick={() => closeMenu()}
+              >
+                <i className="fas fa-times"></i>
+              </button>
+              <ul className="menu__links">
+                <li className="menu__list">
+                  <a
+                    href="#home"
+                    className="menu__link"
+                    onClick={() => closeMenu()}
+                  >
+                    Home
+                  </a>
+                </li>
+                <li className="menu__list">
+                  <a
+                    href="#contact"
+                    className="menu__link"
+                    onClick={() => closeMenu()}
+                  >
+                    Contact
+                  </a>
+                </li>
+                <li className="menu__list">
+                  <a
+                    href="menu__link no-cursor"
+                    className="menu__link"
+                    onClick={closeMenu()}
+                  >
+                    Movies
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className="overlay"></div>
+          </div>
+        </nav>
+        <div className="container">
+          <h1 className="intro__txt">Welcome to my Movie App!</h1>
+            <Link to="movies" className="start__btn">
+              <button className="start__btn">Find Movies</button>
+            </Link>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Home;
