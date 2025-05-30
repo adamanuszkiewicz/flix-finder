@@ -9,7 +9,7 @@ const Movies = () => {
   const searchButton = document.getElementById("searchButton")
 
   async function getMovies() {
-    const movies = await fetch(`https://www.omdbapi.com/?s=${searchInput.value}&apikey=${APIKEY}`);
+    const movies = await axios.get(`https://www.omdbapi.com/?s=${searchInput.value}&apikey=${APIKEY}`);
     const moviesData = await movies.json();
     movieListEl.innerHTML = moviesData.Search.map((movie) => movieHTML(movie)).slice(0, 6).join("")
     console.log(moviesData)
