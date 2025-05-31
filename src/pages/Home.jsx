@@ -101,7 +101,7 @@ const Home = () => {
         </nav>
         <div className="container">
           <h1 className="intro__txt">Welcome to my Movie App!</h1>
-            <Link to="movies" className="start__btn">
+            <Link to="movies" >
               <button className="start__btn">Find Movies</button>
             </Link>
         </div>

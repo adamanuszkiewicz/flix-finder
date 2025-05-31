@@ -7,11 +7,6 @@
   font-family: sans-serif;
 }
 
-/* html {
-  height: 100%;
-  scroll-behavior: smooth;
-} */
-
 body {
   height: 100%;
   background-color: rgba(71, 86, 101, 0.822);
@@ -138,6 +133,32 @@ button:active {
   transform: translateY(1px);
 }
 
+/*------------Landing-------------*/
+
+.container {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro__txt {
+  margin-bottom: 50px;
+  color: white;
+}
+
+.start__btn {
+  padding: 20px 30px;
+  border: none;
+  border-radius: 12px;
+  font-size: 24px;
+  font-weight: bold;
+  color: yellow;
+  background-color: red;
+}
+
 .page__title {
   color: red;
   font-size: 48px;
@@ -159,6 +180,7 @@ button:active {
   right: 0;
   transition: all 500ms ease;
 }
+
 .page__title--hover-effect--yellow:after {
   background-color: yellow;
 }
@@ -167,8 +189,6 @@ button:active {
   left: 0;
   width: 100%;
 }
-
-/*----------------------------------------------*/
 
 .nav__link--hover-effect {
   position: relative;
@@ -194,7 +214,6 @@ button:active {
 }
 
 .nav__container {
-  /* background-color: black; */
   width: 100%;
   max-width: 2200px;
   padding: 48px;
@@ -295,55 +314,74 @@ button:active {
   padding: 8px;
 }
 
-/*
-
-Landing
-
-*/
+/*-----------Search Movies---------------*/
 
 .search__container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .search__wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 1000px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
-    padding: 36px;
-    /* margin: 36px; */
-    top: 50px;
-}
-
-.search__btn {
-    position: relative;
-    width: 100%;
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 36px;
+  top: 50px;
 }
 
 .search__container--header {
-    position: relative;
-    font-size: 30px;
-    color: yellow;
-    border: none;
-    border-radius: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 32px;
+  position: relative;
+  font-size: 30px;
+  color: yellow;
+  border: none;
+  border-radius: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 32px;
+}
+
+.search__info {
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  margin-top: 18px;
+  padding: 16px;
+  margin-left: 24px;
+}
+
+.search__btn {
+  position: relative;
+  width: 100%;
+}
+
+.movie__container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .movie__row {
-    width: 100%;
-    max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .movies__header {
@@ -355,6 +393,7 @@ Landing
 }
 
 .movie__description {
+  width: 600px;
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
@@ -381,26 +420,9 @@ Landing
   display: none;
 }
 
-.movie__container {
-  width: 100%;
-  max-width: 50%;
-  margin: 0 auto;
-  margin-top: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.movie__row {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .movie__card--container {
   width: 100%;
-  max-width: 1000px;
+  max-width: 100%;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -411,7 +433,7 @@ Landing
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 600px;
   cursor: pointer;
   transition: all 500ms ease;
 }
@@ -438,9 +460,6 @@ Landing
   padding-top: 20px;
 }
 
-/* .movie__summary:hover {
-  display: block;
-} */
 
 .movie__list {
   width: 100%;
@@ -449,15 +468,19 @@ Landing
   margin-bottom: 12px;
 }
 
-
-/*--------------------------------*/
+/*---------------Movie Details-----------------*/
 
 .movie__details--container {
   width: 100%;
+  max-width: 1000px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
+} 
+
+.movie__details--container:hover {
+  display: block;
 }
 
 .movie__details--row {
@@ -467,8 +490,10 @@ Landing
   align-items: center;
 }
 
-
-
+.movie__details--list {
+  width: 100%;
+  height: 100%;
+}
 
 .movie__details--card--container {
   width: 100%;
@@ -476,34 +501,20 @@ Landing
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-
-
-/* .movie__details--card {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: center;
-  align-items: center;
-  width: 1000px;
-  cursor: pointer;
-  transition: all 500ms ease;
-  border: 2px solid orange;
-} */
+} 
 
 .movie__details--title {
-   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   padding-left: 24px;
-}
+} 
 
 .movie__details--description {
-  height: 500px;
-  width: 100%;
+  height: 600px;
+  width: 1000px;
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
@@ -525,7 +536,9 @@ Landing
 }
 
 .m-title {
+  position: absolute;
   font-size: 30px;
+  position: relative;
 }
 
 .m-year {
@@ -535,50 +548,17 @@ Landing
 
 .m-plot {
   color: rgba(192, 192, 192, 0.7);
-}
+} 
 
 .error-message {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 /*--------------------------------*/
 
 
-.search__info {
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 100%;
-  margin-top: 18px;
-  padding: 16px;
-  margin-left: 24px;
-}
-
-/* -------Start Button------ */
-.container {
-  width: 100%;
-  height: 50vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.intro__txt {
-  margin-bottom: 50px;
-  color: white;
-}
-
-.start__btn {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 12px;
-  font-size: 24px;
-  font-weight: bold;
-  color: yellow;
-  background-color: red;
-}
 
 
 /* ---------------------------- */

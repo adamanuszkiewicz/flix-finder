@@ -29,20 +29,18 @@ const MovieDetails = () => {
 
   return (
     <div className="movie__details--container">
-      <div className="movie__details--card--container">
-        <div className="movie__row">
-          <div className="movie__details--list">
-            <div className="movie__card" key={movie.imdbID}>
-              <div className="movie__card--container">
-                <div className="movie__details--description">
-                  <div className="movie__title">
-                    <h3 className="m-title">{movie.Title}</h3>
-                    <p className="m-year">{movie.Year}</p>
-                    <p className="m-plot">{movie.Plot}</p>
-                  </div>
-                  <div className="movie__poster">
-                    <img src={movie.Poster} alt={movie.Title} />
-                  </div>
+      <div className="movie__details--row">
+        <div className="movie__details--list">
+          <div className="movie__details--card">
+            <div className="movie__details--card--container">
+              <div className="movie__details--description">
+                <div className="movie__title">
+                  <h3 className="m-title">{movie.Title}</h3>
+                  <p className="m-year">{movie.Year}</p>
+                  <p className="m-plot">{movie.Plot}</p>
+                </div>
+                <div className="movie__details--poster">
+                  <img src={movie.Poster} alt={movie.Title} />
                 </div>
               </div>
             </div>
@@ -50,6 +48,28 @@ const MovieDetails = () => {
         </div>
       </div>
     </div>
+    // <div className="movie__details--container">
+    //   <div className="movie__details--card--container">
+    //     <div className="movie__row">
+    //       <div className="movie__details--list">
+    //         <div className="movie__card" key={movie.imdbID}>
+    //           <div className="movie__card--container">
+    //             <div className="movie__details--description">
+    //               <div className="movie__title">
+    //                 <h3 className="m-title">{movie.Title}</h3>
+    //                 <p className="m-year">{movie.Year}</p>
+    //                 <p className="m-plot">{movie.Plot}</p>
+    //               </div>
+    //               <div className="movie__poster">
+    //                 <img src={movie.Poster} alt={movie.Title} />
+    //               </div>
+    //             </div>
+    //           </div>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </div>
   );
 };
 
