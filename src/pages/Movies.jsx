@@ -1,52 +1,37 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
+
+const APIKEY = "f1babf83";
 
 const Movies = () => {
-  const movieListEl = document.querySelector('.movie__list');
-  const APIKEY = "f1babf83"
-  const searchInput = document.getElementById("searchInput")
-  const searchButton = document.getElementById("searchButton")
+  const [searchTerm, setSearchTerm] = useState("");
+  const [movies, setMovies] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-  async function getMovies() {
-    const movies = await axios.get(`https://www.omdbapi.com/?s=${searchInput.value}&apikey=${APIKEY}`);
-    const moviesData = await movies.json();
-    movieListEl.innerHTML = moviesData.Search.map((movie) => movieHTML(movie)).slice(0, 6).join("")
-    console.log(moviesData)
-    resetSearch();
-  };
-
-  function resetSearch() {
-    document.getElementById('searchInput').value = '';
-  };
-
-  searchButton.addEventListener('click', getMovies);
-
-  searchInput.addEventListener('keyup', function(event) {
-    if (event.key === "Enter") {
-        searchButton.click();
+  const getMovies = async () => {
+    if (!searchTerm) return;
+    setLoading(true);
+    try {
+      const response = await axios.get(
+        `https://www.omdbapi.com/?s=${searchTerm}&apikey=${APIKEY}`
+      );
+      setMovies(response.data.Search ? response.data.Search.slice(0, 6) : []);
+    } catch (error) {
+      setMovies([]);
     }
-  });
-  
-  function movieHTML(movie) {
-    return `<div class="movie__card"><a href="movie.html">
-    <div class="movie__card--container">
-      <div class="movie__description">
-        <div class="movie__title">
-          <h3>${movie.Title}</h3>
-          <p>${movie.Year}</p>
-        </div>
-        <div class="movie__poster">
-          <img src=${movie.Poster}>
-          <p class="movie__summary">
-              
-          </p>
-        </div>
-      </div>    
-    </div>
-  </a></div>`
+    setLoading(false);
+    setSearchTerm("");
   };
- 
+
+  const handleInputChange = (e) => setSearchTerm(e.target.value);
+
+  const handleKeyUp = (e) => {
+    if (e.key === "Enter") {
+      getMovies();
+    }
+  };
+
   return (
     <section id="search">
       <div className="search__container">
@@ -54,7 +39,14 @@ const Movies = () => {
           <h2 className="search__container--header">
             Find your favorite movie!
           </h2>
-          <input type="text" id="searchInput" placeholder=" Search Title" />
+          <input
+            type="text"
+            id="searchInput"
+            placeholder=" Search Title"
+            value={searchTerm}
+            onChange={handleInputChange}
+            onKeyUp={handleKeyUp}
+          />
           <button type="submit" id="searchButton" onClick={getMovies}>
             <i className="fas fa-magnifying-glass"></i>
           </button>
@@ -64,23 +56,28 @@ const Movies = () => {
       <div className="movie__container">
         <div className="movie__row">
           <div className="movie__list">
-            <div className="movie">
-              <div className="movie__card--container">
-                <div className="movie__card">
-                  <div className="movie__description">
-                    <a href="movie.html">
-                      <div className="movie__title">
-                        <h3>$movie.Title</h3>
-                        <p>$movie.Year</p>
+            {loading && <p>Loading...</p>}
+            {movies.length > 0 ? (
+              movies.map((movie) => (
+                <div className="movie__card" key={movie.imdbID}>
+                  <Link to={`/movies/${movie.imdbID}`}>
+                    <div className="movie__card--container">
+                      <div className="movie__description">
+                        <div className="movie__title">
+                          <h3>{movie.Title}</h3>
+                          <p>{movie.Year}</p>
+                        </div>
+                        <div className="movie__poster">
+                          <img src={movie.Poster} alt={movie.Title} />
+                        </div>
                       </div>
-                      <div className="movie__poster">
-                        {/* <img src={movie.Poster} alt="" /> */}
-                      </div>
-                    </a>
-                  </div>
+                    </div>
+                  </Link>
                 </div>
-              </div>
-            </div>
+              ))
+            ) : (
+              !loading && <p className="error-message">No movies found.</p>
+            )}
           </div>
         </div>
       </div>
