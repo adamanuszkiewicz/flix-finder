@@ -556,11 +556,188 @@ button:active {
   align-items: center;
 }
 
-/*--------------------------------*/
+/* ------------MODAL---------------- */
 
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate( -50%, -50%);
+  width: 90%;
+  max-width: 1100px;
+  height: 700px;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  visibility: hidden;
+  z-index: -1;
+  transition: visibility 1s, z-index 1s, box-shadow 0.5s ease;
+}
 
+.modal--open .modal {
+  z-index: 60;
+  box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0.55);
+  visibility: visible;
+}
 
+.modal__half {
+  width: 50%;
+  padding: 40px 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  transition: all 300ms ease-in;
+}
 
+.modal--open .modal__about,
+.modal--open .modal__contact {
+  transform: translateX(0%);
+}
+
+.modal__about {
+  background-color: rgb(245, 245, 245);
+  transform: translateX(-110%);
+}
+
+.modal__languages {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.modal__language {
+  width: 25%;
+  padding: 16px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 300ms ease;
+}
+
+.modal__language:hover .language__name {
+  transform: scale(1);
+}
+
+.modal__language:hover {
+  filter: brightness(80%);
+  transform: scale(0.9);
+  transition: all 300 ms ease;
+}
+
+.language__name {
+  position: absolute;
+  bottom: -10px;
+  transform: scale(0);
+  transition: all 450ms ease;
+}
+
+.modal__language--img {
+  width: 100%;
+}
+
+.modal__contact {
+  background-color: #242424;
+  color: white;
+  transform: translateX(110%);
+}
+
+.modal__title {
+  font-size: 26px;
+}
+
+.modal__sub-title {
+  margin: 12px 0 24px 0;
+  font-size: 14px;
+
+}
+
+.modal__para {
+  margin-bottom: 12px;
+  line-height: 1.75;
+}
+
+.form__item {
+  margin-bottom: 20px;
+
+}
+
+.form__submit {
+  background-color: blue;
+  border: 4px solid #4bb543;
+  border-radius: 4px;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 12px 24px;
+  width: 100%;
+  max-width: 240px;
+  transition: all 100ms ease;
+}
+
+.form__submit:hover {
+  border-color: #4bb543;
+  background-color: transparent;
+}
+
+.form__submit:active {
+  border-color: blue;
+  background-color: #4bb543;
+}
+
+.modal__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+
+}
+
+.modal__overlay--loading {
+  background-color: #242424;
+  font-size: 80px;
+}
+
+.modal__overlay--success {
+  background-color: #4bb543;
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  padding: 28px;
+}
+
+.modal__overlay--visible {
+  z-index: 1;
+  display: flex;
+}
+
+.fa-spinner {
+  animation: spinner 1000ms infinite linear
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.modal__exit {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  color: white;
+  font-size: 36px;
+  z-index: 100;
+}
 /* ---------------------------- */
 
 @media (max-width: 955px) {
@@ -753,5 +930,68 @@ button:active {
   #searchButton:hover {
     background-color: rgb(60 13 153);
     transition: all 400ms ease-in-out;
+  }
+}
+
+@media (max-width: 385px) {
+  .nav__container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .page__title {
+    margin-left: 28px;
+  }
+
+  .intro__txt {
+    text-align: center;
+  }
+  
+.search__container--header {
+  text-align: center;
+}
+
+  #searchButton {
+    position: absolute;
+    width: 100%;
+    max-width: 150px;
+    background-color: rgba(2, 50, 243, 0.915);
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 70px;
+    left: 310px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 20px 18px;
+    z-index: 1;
+  }
+
+  .movie__card {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    }
+  
+    .movie__card--container {
+      width: 300px;
+      
+    }
+
+  .movie__row {
+    width: 100px;
+    margin-right: 200px;
+  }
+
+  .error-message {
+    width: 100px;
+    margin-left: 100px;
+    text-align: center;
   }
 }

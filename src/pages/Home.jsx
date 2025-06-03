@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Home = () => {
-
   function openMenu() {
     document.body.classList += "menu--open";
   }
@@ -17,18 +16,20 @@ const Home = () => {
           <div className="nav__container">
             <h1
               className="
-          page__title 
-          page__title--hover-effect page__title--hover-effect--yellow"
+              page__title 
+              page__title--hover-effect 
+              page__title--hover-effect--yellow"
             >
               MovieFlix
             </h1>
             <ul className="nav__link--list">
               <li>
                 <a
-                  href="#home"
+                  href="/"
                   className="
               nav__link 
-              nav__link--hover-effect nav__link--hover-effect--yellow"
+              nav__link--hover-effect 
+              nav__link--hover-effect--yellow"
                 >
                   Home
                 </a>
@@ -38,14 +39,15 @@ const Home = () => {
                   href="#contact"
                   className="
               nav__link 
-              nav__link--hover-effect nav__link--hover-effect--yellow"
+              nav__link--hover-effect 
+              nav__link--hover-effect--yellow"
                 >
                   Contact
                 </a>
               </li>
               <li>
-                <a
-                  href="#movies"
+                <Link
+                  to="movies"
                   className="
               nav__link  
               nav__link--hover-effect
@@ -53,7 +55,7 @@ const Home = () => {
               nav__link--primary"
                 >
                   Movies
-                </a>
+                </Link>
               </li>
             </ul>
             <button className="btn__menu" onClick={() => openMenu()}>
@@ -69,7 +71,7 @@ const Home = () => {
               <ul className="menu__links">
                 <li className="menu__list">
                   <a
-                    href="#home"
+                    href="/"
                     className="menu__link"
                     onClick={() => closeMenu()}
                   >
@@ -86,13 +88,13 @@ const Home = () => {
                   </a>
                 </li>
                 <li className="menu__list">
-                  <a
-                    href="menu__link no-cursor"
+                  <Link
+                    to="movies"
                     className="menu__link"
                     onClick={closeMenu()}
                   >
                     Movies
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -101,12 +103,13 @@ const Home = () => {
         </nav>
         <div className="container">
           <h1 className="intro__txt">Welcome to my Movie App!</h1>
-            <Link to="movies" >
-              <button className="start__btn">Find Movies</button>
-            </Link>
+          <Link to="movies">
+            <button className="start__btn">Find Movies</button>
+          </Link>
         </div>
       </div>
     </section>
+    
   );
 };
 

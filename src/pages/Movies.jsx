@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Home from "./Home";
 
 const APIKEY = "f1babf83";
 
@@ -8,6 +9,14 @@ const Movies = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
+
+  function openMenu() {
+    document.body.classList += "menu--open";
+  }
+  function closeMenu() {
+    document.body.classList.remove("menu--open");
+  }
+
 
   const getMovies = async () => {
     if (!searchTerm) return;
@@ -33,6 +42,94 @@ const Movies = () => {
   };
 
   return (
+    <>
+    <div className="nav__container">
+                {/* <h1
+                  className="
+                  page__title 
+                  page__title--hover-effect 
+                  page__title--hover-effect--yellow"
+                >
+                  MovieFlix
+                </h1> */}
+                <ul className="nav__link--list">
+                  <li>
+                    <a href="/"
+                      className="
+                  nav__link 
+                  nav__link--hover-effect 
+                  nav__link--hover-effect--yellow"
+                    >
+                      Home
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#contact"
+                      className="
+                  nav__link 
+                  nav__link--hover-effect 
+                  nav__link--hover-effect--yellow"
+                    >
+                      Contact
+                    </a>
+                  </li>
+                  <li>
+                    <Link
+                      to="/"
+                      className="
+                  nav__link  
+                  nav__link--hover-effect
+                  nav__link--hover-effect--yellow
+                  nav__link--primary"
+                    >
+                      Movies
+                    </Link>
+                  </li>
+                </ul>
+                <button className="btn__menu" onClick={() => openMenu()}>
+                  <i className="fa-solid fa-bars"></i>
+                </button>
+                <div className="menu__backdrop">
+                  <button
+                    className="btn__menu btn__menu--close"
+                    onClick={() => closeMenu()}
+                  >
+                    <i className="fas fa-times"></i>
+                  </button>
+                  <ul className="menu__links">
+                    <li className="menu__list">
+                      <a
+                        href="/"
+                        className="menu__link"
+                        onClick={() => closeMenu()}
+                      >
+                        Home
+                      </a>
+                    </li>
+                    <li className="menu__list">
+                      <a
+                        href="#contact"
+                        className="menu__link"
+                        onClick={() => closeMenu()}
+                      >
+                        Contact
+                      </a>
+                    </li>
+                    <li className="menu__list">
+                      <Link
+                        to="/"
+                        className="menu__link"
+                        onClick={closeMenu()}
+                      >
+                        Movies
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+                <div className="overlay"></div>
+              </div>
+    
     <section id="search">
       <div className="search__container">
         <div className="search__wrapper">
@@ -82,6 +179,7 @@ const Movies = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 
