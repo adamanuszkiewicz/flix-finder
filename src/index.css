@@ -472,11 +472,13 @@ button:active {
 
 .movie__details--container {
   width: 100%;
+  /* height: 100vh; */
   max-width: 1000px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: -50px;
 } 
 
 .movie__details--container:hover {
@@ -497,7 +499,7 @@ button:active {
 
 .movie__details--card--container {
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -513,7 +515,7 @@ button:active {
 } 
 
 .movie__details--description {
-  height: 600px;
+  height: 550px;
   width: 1000px;
   display: flex;
   flex-direction: row-reverse;
