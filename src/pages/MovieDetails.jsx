@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const APIKEY = "f1babf83";
 
@@ -27,7 +28,101 @@ const MovieDetails = () => {
   if (loading) return <div>Loading...</div>;
   if (!movie) return <div>Movie not found.</div>;
 
+  function openMenu() {
+    document.body.classList += "menu--open";
+  }
+  function closeMenu() {
+    document.body.classList.remove("menu--open");
+  }
+
   return (
+    <>
+    <div className="nav__container">
+                    {/* <h1
+                      className="
+                      page__title 
+                      page__title--hover-effect 
+                      page__title--hover-effect--yellow"
+                    >
+                      MovieFlix
+                    </h1> */}
+                    <ul className="nav__link--list">
+                      <li>
+                        <a href="/"
+                          className="
+                      nav__link 
+                      nav__link--hover-effect 
+                      nav__link--hover-effect--yellow"
+                        >
+                          Home
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#contact"
+                          className="
+                      nav__link 
+                      nav__link--hover-effect 
+                      nav__link--hover-effect--yellow"
+                        >
+                          Contact
+                        </a>
+                      </li>
+                      <li>
+                        <Link
+                          to="/movies"
+                          className="
+                      nav__link  
+                      nav__link--hover-effect
+                      nav__link--hover-effect--yellow
+                      nav__link--primary"
+                        >
+                          Movies
+                        </Link>
+                      </li>
+                    </ul>
+                    <button className="btn__menu" onClick={() => openMenu()}>
+                      <i className="fa-solid fa-bars"></i>
+                    </button>
+                    <div className="menu__backdrop">
+                      <button
+                        className="btn__menu btn__menu--close"
+                        onClick={() => closeMenu()}
+                      >
+                        <i className="fas fa-times"></i>
+                      </button>
+                      <ul className="menu__links">
+                        <li className="menu__list">
+                          <a
+                            href="/"
+                            className="menu__link"
+                            onClick={() => closeMenu()}
+                          >
+                            Home
+                          </a>
+                        </li>
+                        <li className="menu__list">
+                          <a
+                            href="#contact"
+                            className="menu__link"
+                            onClick={() => closeMenu()}
+                          >
+                            Contact
+                          </a>
+                        </li>
+                        <li className="menu__list">
+                          <Link
+                            to="/movies"
+                            className="menu__link"
+                            onClick={closeMenu()}
+                          >
+                            Movies
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="overlay"></div>
+                  </div>
     <div className="movie__details--container">
       <div className="movie__details--row">
         <div className="movie__details--list">
@@ -48,28 +143,7 @@ const MovieDetails = () => {
         </div>
       </div>
     </div>
-    // <div className="movie__details--container">
-    //   <div className="movie__details--card--container">
-    //     <div className="movie__row">
-    //       <div className="movie__details--list">
-    //         <div className="movie__card" key={movie.imdbID}>
-    //           <div className="movie__card--container">
-    //             <div className="movie__details--description">
-    //               <div className="movie__title">
-    //                 <h3 className="m-title">{movie.Title}</h3>
-    //                 <p className="m-year">{movie.Year}</p>
-    //                 <p className="m-plot">{movie.Plot}</p>
-    //               </div>
-    //               <div className="movie__poster">
-    //                 <img src={movie.Poster} alt={movie.Title} />
-    //               </div>
-    //             </div>
-    //           </div>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
+    </>
   );
 };
 

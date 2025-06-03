@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import Home from "./Home";
 
 const APIKEY = "f1babf83";
 
