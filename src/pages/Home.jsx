@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ContactForm from "../components/ContactForm";
 
 const Home = () => {
   function openMenu() {
@@ -24,26 +25,24 @@ const Home = () => {
             </h1>
             <ul className="nav__link--list">
               <li>
-                <a
-                  href="/"
+                <Link to="/"
                   className="
               nav__link 
               nav__link--hover-effect 
               nav__link--hover-effect--yellow"
                 >
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#contact"
+                <Link to="/contact__form"
                   className="
               nav__link 
               nav__link--hover-effect 
               nav__link--hover-effect--yellow"
                 >
                   Contact
-                </a>
+                </Link>
               </li>
               <li>
                 <Link
@@ -70,28 +69,26 @@ const Home = () => {
               </button>
               <ul className="menu__links">
                 <li className="menu__list">
-                  <a
-                    href="/"
+                  <Link to="/"
                     className="menu__link"
                     onClick={() => closeMenu()}
                   >
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li className="menu__list">
-                  <a
-                    href="#contact"
+                  <Link to="/contact__form"
                     className="menu__link"
-                    onClick={() => closeMenu()}
+                    onClick={() => closeMenu()} 
                   >
                     Contact
-                  </a>
+                  </Link>
                 </li>
                 <li className="menu__list">
                   <Link
                     to="movies"
                     className="menu__link"
-                    onClick={closeMenu()}
+                    onClick={() => closeMenu()}
                   >
                     Movies
                   </Link>
@@ -109,7 +106,6 @@ const Home = () => {
         </div>
       </div>
     </section>
-    
   );
 };
 

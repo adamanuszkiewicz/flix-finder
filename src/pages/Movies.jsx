@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+// import Home from "./Home";
+import ContactForm from "../components/ContactForm";
 
 const APIKEY = "f1babf83";
 
@@ -53,25 +55,24 @@ const Movies = () => {
                 </h1> */}
                 <ul className="nav__link--list">
                   <li>
-                    <a href="/"
+                    <Link to="/"
                       className="
                   nav__link 
                   nav__link--hover-effect 
                   nav__link--hover-effect--yellow"
                     >
                       Home
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="#contact"
+                    <Link to="/contact__form"
                       className="
                   nav__link 
                   nav__link--hover-effect 
                   nav__link--hover-effect--yellow"
                     >
                       Contact
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <Link
@@ -98,28 +99,26 @@ const Movies = () => {
                   </button>
                   <ul className="menu__links">
                     <li className="menu__list">
-                      <a
-                        href="/"
+                      <Link to="/"
                         className="menu__link"
                         onClick={() => closeMenu()}
                       >
                         Home
-                      </a>
+                      </Link>
                     </li>
                     <li className="menu__list">
-                      <a
-                        href="#contact"
+                      <Link to="/contact__form"
                         className="menu__link"
                         onClick={() => closeMenu()}
                       >
                         Contact
-                      </a>
+                      </Link>
                     </li>
                     <li className="menu__list">
                       <Link
                         to="/"
                         className="menu__link"
-                        onClick={closeMenu()}
+                        onClick={() => closeMenu()}
                       >
                         Movies
                       </Link>

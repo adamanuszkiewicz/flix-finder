@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import ContactForm from "../components/ContactForm";
 
 const APIKEY = "f1babf83";
 
@@ -48,25 +49,24 @@ const MovieDetails = () => {
                     </h1> */}
                     <ul className="nav__link--list">
                       <li>
-                        <a href="/"
+                        <Link to="/"
                           className="
                       nav__link 
                       nav__link--hover-effect 
                       nav__link--hover-effect--yellow"
                         >
                           Home
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a
-                          href="#contact"
+                        <Link to="/contact__form"
                           className="
                       nav__link 
                       nav__link--hover-effect 
                       nav__link--hover-effect--yellow"
                         >
                           Contact
-                        </a>
+                        </Link>
                       </li>
                       <li>
                         <Link
@@ -81,40 +81,38 @@ const MovieDetails = () => {
                         </Link>
                       </li>
                     </ul>
-                    <button className="btn__menu" onClick={() => openMenu()}>
+                    <button className="btn__menu" onClick={openMenu}>
                       <i className="fa-solid fa-bars"></i>
                     </button>
                     <div className="menu__backdrop">
                       <button
                         className="btn__menu btn__menu--close"
-                        onClick={() => closeMenu()}
+                        onClick={closeMenu}
                       >
                         <i className="fas fa-times"></i>
                       </button>
                       <ul className="menu__links">
                         <li className="menu__list">
-                          <a
-                            href="/"
+                          <Link to="/"
                             className="menu__link"
-                            onClick={() => closeMenu()}
+                            onClick={closeMenu}
                           >
                             Home
-                          </a>
+                          </Link>
                         </li>
                         <li className="menu__list">
-                          <a
-                            href="#contact"
+                          <Link to="/contact__form"
                             className="menu__link"
-                            onClick={() => closeMenu()}
+                            onClick={() => closeMenu}
                           >
                             Contact
-                          </a>
+                          </Link>
                         </li>
                         <li className="menu__list">
                           <Link
                             to="/movies"
                             className="menu__link"
-                            onClick={closeMenu()}
+                            onClick={() => closeMenu}
                           >
                             Movies
                           </Link>
