@@ -50,138 +50,138 @@ const ContactForm = () => {
     <div className="message__header">
       <h1 className="greeting">Hello! Send me a message to get in touch!</h1>
     </div>
-      <div class="modal">
-        <div class="modal__half modal__about">
-          <h3 class="modal__title modal__title--about">
+      <div className="modal">
+        <div className="modal__half modal__about">
+          <h3 className="modal__title modal__title--about">
             Here's a bit about me.
           </h3>
-          <h4 class="modal__sub-title modal__sub-title--sbout">
+          <h4 className="modal__sub-title modal__sub-title--sbout">
             Frontend Software engineer
           </h4>
-          <p class="modal__para">
-            I am a <b class="blue">Frontend Software Engineer</b>
+          <p className="modal__para">
+            I am a <b className="blue">Frontend Software Engineer</b>
             <br />I am currently in FES Institute working my way through the
             course. I am highly motivated and have a strong passion for
             developing websites with a great{" "}
-            <b class="blue">user experience.</b>
+            <b className="blue">user experience.</b>
           </p>
-          <div class="modal__languages">
-            <figure class="modal__language">
+          <div className="modal__languages">
+            <figure className="modal__language">
               <img
                 class="modal__language--img"
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png"
                 alt=""
               />
-              <span class="language__name">HTML</span>
+              <span className="language__name">HTML</span>
             </figure>
-            <figure class="modal__language">
+            <figure className="modal__language">
               <img
-                class="modal__language--img"
+                className="modal__language--img"
                 src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png"
                 alt=""
               />
-              <span class="language__name">CSS</span>
+              <span className="language__name">CSS</span>
             </figure>
-            <figure class="modal__language">
+            <figure className="modal__language">
               <img
-                class="modal__language--img"
+                className="modal__language--img"
                 src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png"
                 alt=""
               />
-              <span class="language__name">JavaScript</span>
+              <span className="language__name">JavaScript</span>
             </figure>
-            <figure class="modal__language">
+            <figure className="modal__language">
               <img
-                class="modal__language--img"
+                className="modal__language--img"
                 src="https://cdn.iconscout.com/icon/free/png-256/react-3-1175109.png"
                 alt=""
               />
-              <span class="language__name">React</span>
+              <span className="language__name">React</span>
             </figure>
-            <figure class="modal__language">
+            <figure className="modal__language">
               <img
-                class="modal__language--img"
+                className="modal__language--img"
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/768px-Typescript_logo_2020.svg.png?20221110153201"
                 alt=""
               />
-              <span class="language__name">TypeScript</span>
+              <span className="language__name">TypeScript</span>
             </figure>
-            <figure class="modal__language">
+            <figure className="modal__language">
               <img
-                class="modal__language--img"
+                className="modal__language--img"
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSDKn3vA2YUbXzN0ZC3gALWJ08gJN-Drl15w&s"
                 alt=""
               />
-              <span class="language__name">Tailwind</span>
+              <span className="language__name">Tailwind</span>
             </figure>
-            <figure class="modal__language">
+            <figure className="modal__language">
               <img
-                class="modal__language--img"
+                className="modal__language--img"
                 src="https://appwrite.io/assets/logomark/logo.svg"
                 alt=""
               />
-              <span class="language__name">Appwrite</span>
+              <span className="language__name">Appwrite</span>
             </figure>
-            <figure class="modal__language">
+            <figure className="modal__language">
               <img
-                class="modal__language--img"
+                className="modal__language--img"
                 src="https://cdn4.iconfinder.com/data/icons/google-i-o-2016/512/google_firebase-2-1024.png"
                 alt=""
               />
-              <span class="language__name">Firebase</span>
+              <span className="language__name">Firebase</span>
             </figure>
           </div>
         </div>
 
-        <div class="modal__half modal__contact">
-          <i class="fas fa-times modal__exit click"
+        <div className="modal__half modal__contact">
+          <i className="fas fa-times modal__exit click"
             onClick={() => toggleModal()}
           ></i>
-          <h3 class="modal__title modal__title--contact">Let's have a chat!</h3>
-          <h4 class="modal__sub-title modal__sub-title--contact">
+          <h3 className="modal__title modal__title--contact">Let's have a chat!</h3>
+          <h4 className="modal__sub-title modal__sub-title--contact">
             I'm currently open to new opportunities. I would love to hear from
             you!
           </h4>
-          <form id="contact__form" onSubmit={() => contact()}>
-            <div class="form__item">
-              <label class="form__item--label">Name</label>
+          <form id="contact__form" onSubmit={contact}>
+            <div className="form__item">
+              <label className="form__item--label">Name</label>
               <input
-                class="contact__input"
+                className="contact__input"
                 name="user_name"
                 type="text"
               ></input>
             </div>
-            <div class="form__item">
-              <label class="form__item--label">Email</label>
+            <div className="form__item">
+              <label className="form__item--label">Email</label>
               <input
-                class="contact__input"
+                className="contact__input"
                 name="user_email"
                 type="email"
               ></input>
             </div>
-            <div class="form__item">
-              <label class="form__item--label">Message</label>
+            <div className="form__item">
+              <label className="form__item--label">Message</label>
               <textarea
-                class="contact__input"
+                className="contact__input"
                 name="message"
                 type="text"
               ></textarea>
             </div>
-            <button id="contact__submit" class="form__submit">
+            <button id="contact__submit" className="form__submit">
               Send it my way
             </button>
           </form>
-          <div class="modal__overlay modal__overlay--loading">
+          <div className="modal__overlay modal__overlay--loading">
             <i class="fas fa-spinner"></i>
           </div>
-          <div class="modal__overlay modal__overlay--success">
+          <div className="modal__overlay modal__overlay--success">
             Thanks for the message! Looking forward to speaking with you soon.
           </div>
         </div>
       </div>
       <Link to="#">
-        <button class="mail__btn click" onClick={() => toggleModal()}>
-          <i class="fas fa-envelope"></i>
+        <button className="mail__btn click" onClick={() => toggleModal()}>
+          <i className="fas fa-envelope"></i>
         </button>
       </Link>
       </div>
