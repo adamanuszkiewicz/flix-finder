@@ -89,7 +89,7 @@ const MovieDetails = () => {
             </li>
             <li className="menu__list">
               <Link
-                to="/"
+                to="/contact__form"
                 className="menu__link"
                 onClick={() => closeMenu}
               >

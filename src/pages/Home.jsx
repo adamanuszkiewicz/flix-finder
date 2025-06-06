@@ -34,7 +34,7 @@ const Home = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/"
+                <Link to="/contact__form"
                   className="
               nav__link 
               nav__link--hover-effect 
@@ -45,7 +45,7 @@ const Home = () => {
               </li>
               <li>
                 <Link
-                  to="movies"
+                  to="/movies"
                   className="
               nav__link  
               nav__link--hover-effect
@@ -85,7 +85,7 @@ const Home = () => {
                 </li>
                 <li className="menu__list">
                   <Link
-                    to="movies"
+                    to="/movies"
                     className="menu__link"
                     onClick={() => closeMenu()}
                   >

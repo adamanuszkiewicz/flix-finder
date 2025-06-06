@@ -53,11 +53,10 @@ const ContactForm = () => {
 
   return (
     <>
-      {/* <Link to="/movies">
-        <button className="start__btn">Back</button>
-      </Link>
-      <div className="contact__container"> */}
-        
+       <div className="contact__container">
+          <Link to="/movies">
+            <button className="start__btn">Back</button>
+          </Link>
        
           <div className="message__header">
             <h1 className="greeting">Hello! Send me a message to get in touch!</h1>
@@ -196,7 +195,7 @@ const ContactForm = () => {
               <i className="fas fa-envelope"></i>
             </button>
           </Link>
-        {/* </div> */}
+        </div>
       
     </>
   );
