@@ -44,10 +44,101 @@ const ContactForm = () => {
     });
   }
 
+  function openMenu() {
+    document.body.classList += "menu--open";
+  }
+  function closeMenu() {
+    document.body.classList.remove("menu--open");
+  }
+
   return (
-    
+    <>
+    <div className="contact__nav--container">
+                    {/* <h1
+                      className="
+                      page__title 
+                      page__title--hover-effect 
+                      page__title--hover-effect--yellow"
+                    >
+                      MovieFlix
+                    </h1> */}
+                    <ul className="nav__link--list">
+                      <li>
+                        <Link to="/"
+                          className="
+                      nav__link 
+                      nav__link--hover-effect 
+                      nav__link--hover-effect--yellow"
+                        >
+                          Home
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/contact__form"
+                          className="
+                      nav__link 
+                      nav__link--hover-effect 
+                      nav__link--hover-effect--yellow"
+                        >
+                          Contact
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          to="/"
+                          className="
+                      nav__link  
+                      nav__link--hover-effect
+                      nav__link--hover-effect--yellow
+                      nav__link--primary"
+                        >
+                          Movies
+                        </Link>
+                      </li>
+                    </ul>
+                    <button className="btn__menu" onClick={() => openMenu()}>
+                      <i className="fa-solid fa-bars"></i>
+                    </button>
+                    <div className="menu__backdrop">
+                      <button
+                        className="btn__menu btn__menu--close"
+                        onClick={() => closeMenu()}
+                      >
+                        <i className="fas fa-times"></i>
+                      </button>
+                      <ul className="menu__links">
+                        <li className="menu__list">
+                          <Link to="/"
+                            className="menu__link"
+                            onClick={() => closeMenu()}
+                          >
+                            Home
+                          </Link>
+                        </li>
+                        <li className="menu__list">
+                          <Link to="/contact__form"
+                            className="menu__link"
+                            onClick={() => closeMenu()}
+                          >
+                            Contact
+                          </Link>
+                        </li>
+                        <li className="menu__list">
+                          <Link
+                            to="/"
+                            className="menu__link"
+                            onClick={() => closeMenu()}
+                          >
+                            Movies
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="overlay"></div>
+                  </div>
       <div className="contact__container">
-        <div className="bg-img" id="bg-img">
+        
+        {/* <div className="bg-img" id="bg-img"> */}
           <div className="message__header">
             <h1 className="greeting">Hello! Send me a message to get in touch!</h1>
           </div>
@@ -186,8 +277,8 @@ const ContactForm = () => {
             </button>
           </Link>
         </div>
-      </div>
-    
+      {/* </div> */}
+    </>
   );
 };
 

@@ -38,8 +38,8 @@ const MovieDetails = () => {
 
   return (
     <>
-    <div className="nav__container">
-                    {/* <h1
+      <div className="nav__container">
+        {/* <h1
                       className="
                       page__title 
                       page__title--hover-effect 
@@ -47,100 +47,97 @@ const MovieDetails = () => {
                     >
                       MovieFlix
                     </h1> */}
-                    <ul className="nav__link--list">
-                      <li>
-                        <Link to="/"
-                          className="
+        <ul className="nav__link--list">
+          <li>
+            <Link
+              to="/"
+              className="
                       nav__link 
                       nav__link--hover-effect 
                       nav__link--hover-effect--yellow"
-                        >
-                          Home
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/contact__form"
-                          className="
+            >
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/contact__form"
+              className="
                       nav__link 
                       nav__link--hover-effect 
                       nav__link--hover-effect--yellow"
-                        >
-                          Contact
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          to="/movies"
-                          className="
+            >
+              Contact
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/movies"
+              className="
                       nav__link  
                       nav__link--hover-effect
                       nav__link--hover-effect--yellow
                       nav__link--primary"
-                        >
-                          Movies
-                        </Link>
-                      </li>
-                    </ul>
-                    <button className="btn__menu" onClick={openMenu}>
-                      <i className="fa-solid fa-bars"></i>
-                    </button>
-                    <div className="menu__backdrop">
-                      <button
-                        className="btn__menu btn__menu--close"
-                        onClick={closeMenu}
-                      >
-                        <i className="fas fa-times"></i>
-                      </button>
-                      <ul className="menu__links">
-                        <li className="menu__list">
-                          <Link to="/"
-                            className="menu__link"
-                            onClick={closeMenu}
-                          >
-                            Home
-                          </Link>
-                        </li>
-                        <li className="menu__list">
-                          <Link to="/contact__form"
-                            className="menu__link"
-                            onClick={() => closeMenu}
-                          >
-                            Contact
-                          </Link>
-                        </li>
-                        <li className="menu__list">
-                          <Link
-                            to="/movies"
-                            className="menu__link"
-                            onClick={() => closeMenu}
-                          >
-                            Movies
-                          </Link>
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="overlay"></div>
+            >
+              Movies
+            </Link>
+          </li>
+        </ul>
+        <button className="btn__menu" onClick={openMenu}>
+          <i className="fa-solid fa-bars"></i>
+        </button>
+        <div className="menu__backdrop">
+          <button className="btn__menu btn__menu--close" onClick={closeMenu}>
+            <i className="fas fa-times"></i>
+          </button>
+          <ul className="menu__links">
+            <li className="menu__list">
+              <Link to="/" className="menu__link" onClick={closeMenu}>
+                Home
+              </Link>
+            </li>
+            <li className="menu__list">
+              <Link
+                to="/contact__form"
+                className="menu__link"
+                onClick={() => closeMenu}
+              >
+                Contact
+              </Link>
+            </li>
+            <li className="menu__list">
+              <Link
+                to="/movies"
+                className="menu__link"
+                onClick={() => closeMenu}
+              >
+                Movies
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <div className="overlay"></div>
+      </div>
+      <div className="movie__details--container">
+        <div className="movie__details--row">
+          <div className="movie__details--list">
+            <div className="movie__details--card">
+              <div className="movie__details--card--container">
+                <div className="movie__details--description">
+                  <div className="movie__title">
+                    <h3 className="m-title">{movie.Title}</h3>
+                    <p className="m-year">{movie.Year}</p>
+                    <p className="m-plot">{movie.Plot}</p>
                   </div>
-    <div className="movie__details--container">
-      <div className="movie__details--row">
-        <div className="movie__details--list">
-          <div className="movie__details--card">
-            <div className="movie__details--card--container">
-              <div className="movie__details--description">
-                <div className="movie__title">
-                  <h3 className="m-title">{movie.Title}</h3>
-                  <p className="m-year">{movie.Year}</p>
-                  <p className="m-plot">{movie.Plot}</p>
-                </div>
-                <div className="movie__details--poster">
-                  <img src={movie.Poster} alt={movie.Title} />
+                  <div className="movie__details--poster">
+                    <img src={movie.Poster} alt={movie.Title} />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
     </>
   );
 };
