@@ -61,7 +61,7 @@ const MovieDetails = () => {
           </li>
           <li>
             <Link
-              to="/contact__form"
+              to="/"
               className="
                       nav__link 
                       nav__link--hover-effect 
@@ -98,7 +98,7 @@ const MovieDetails = () => {
             </li>
             <li className="menu__list">
               <Link
-                to="/contact__form"
+                to="/"
                 className="menu__link"
                 onClick={() => closeMenu}
               >

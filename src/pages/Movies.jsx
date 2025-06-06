@@ -45,14 +45,6 @@ const Movies = () => {
   return (
     <>
     <div className="nav__container">
-                {/* <h1
-                  className="
-                  page__title 
-                  page__title--hover-effect 
-                  page__title--hover-effect--yellow"
-                >
-                  MovieFlix
-                </h1> */}
                 <ul className="nav__link--list">
                   <li>
                     <Link to="/"
@@ -65,7 +57,7 @@ const Movies = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link to="/contact__form"
+                    <Link to="/"
                       className="
                   nav__link 
                   nav__link--hover-effect 
@@ -107,7 +99,7 @@ const Movies = () => {
                       </Link>
                     </li>
                     <li className="menu__list">
-                      <Link to="/contact__form"
+                      <Link to="/"
                         className="menu__link"
                         onClick={() => closeMenu()}
                       >
