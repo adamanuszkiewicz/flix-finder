@@ -11,6 +11,7 @@ body {
   height: 100%;
   background-color: rgba(71, 86, 101, 0.822);
   max-width: 100vw;
+  overflow-x: hidden;
   /* overflow-y: hidden; */
 }
 
@@ -915,29 +916,32 @@ textarea:focus {
     display: none;
   }
 
-  #search__container {
+  .search__container {
+    position: relative;
     width: 100%;
-    height: auto;
-    margin: 0 auto;
+    max-width: 1000px;
+    margin: 0px 0 80px 0;
+  }
+
+  .search__container--header {
+    transform: translateY(-152px);
+  }
+
+  .movies__header {
+    transform: translateY(-80px);
   }
 
   .search__wrapper {
     width: 100%;
-    height: auto;
+    max-width: 1000px;
     display: flex;
     flex-direction: column-reverse;
     margin: 0 auto;
   }
 
-  .movies__header {
-    text-align: center;
-    transform: translateY(-80px);
-  }
-
   #searchInput {
     position: relative;
     width: 100%;
-    max-width: 500px;
     font-size: 20px;
     opacity: 0.5;
     border: 2px solid rgba(0, 0, 0, 0.193);
@@ -945,7 +949,7 @@ textarea:focus {
     border: none;
     padding: 20px 0px 20px 12px;
     text-align: left;
-    left: 10px;
+    top: 30px;
   }
 
   #searchButton {
@@ -959,12 +963,23 @@ textarea:focus {
     display: flex;
     justify-content: center;
     align-items: center;
-    left: 295px;
+    top: 90px;
+    right: -285px;
+    transform: translateX(-114px);
     color: white;
     border: none;
     cursor: pointer;
     padding: 20px 18px;
     z-index: 1;
+  }
+
+  #searchButton:hover {
+    background-color: rgb(60 13 153);
+    transition: all 400ms ease-in-out;
+  }
+
+  .movies__header {
+    transform: translateY(-80px);
   }
 
   #searchButton:hover {
@@ -980,8 +995,11 @@ textarea:focus {
     font-size: 20px;
   }
 
-  .contact__container {
-    height: 100vh;
+  .message__header {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .contact__container .start__btn  {
@@ -991,15 +1009,7 @@ textarea:focus {
   body .modal--open {
     overflow-y: visible;
   }
-
-  body .contact__form .modal--open {
-    overflow-y: hidden;
-  }
-
-  body .movie__details--container .modal--open {
-    overflow-y: hidden;
-  }
-
+  
   .modal {
     top: 0; 
     left: 0;
@@ -1029,11 +1039,7 @@ textarea:focus {
     flex-direction: column-reverse;
     margin: 0 auto;
   }
-
-  .movies__header {
-    transform: translateY(-80px);
-  }
-
+  
   .search__container--header {
     margin-top: 16px;
   }
@@ -1064,7 +1070,7 @@ textarea:focus {
     justify-content: center;
     align-items: center;
     top: 70px;
-    left: 416px;
+    right: -84px;
     color: white;
     border: none;
     cursor: pointer;
@@ -1076,6 +1082,11 @@ textarea:focus {
     background-color: rgb(60 13 153);
     transition: all 400ms ease-in-out;
   }
+
+  .movies__header {
+    transform: translateY(-80px);
+  }
+
 }
 
 @media (max-width: 480px) {
