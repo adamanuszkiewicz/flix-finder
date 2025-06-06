@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-// import Home from "./Home";
-import ContactForm from "../components/ContactForm";
 
 const APIKEY = "f1babf83";
 
@@ -100,7 +98,7 @@ const Movies = () => {
                     </li>
                     <li className="menu__list">
                       <Link to="/"
-                        className="menu__link"
+                        className="menu__link "
                         onClick={() => closeMenu()}
                       >
                         Contact

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import ContactForm from "../components/ContactForm";
 
 const APIKEY = "f1babf83";
 
@@ -39,14 +38,6 @@ const MovieDetails = () => {
   return (
     <>
       <div className="nav__container">
-        {/* <h1
-                      className="
-                      page__title 
-                      page__title--hover-effect 
-                      page__title--hover-effect--yellow"
-                    >
-                      MovieFlix
-                    </h1> */}
         <ul className="nav__link--list">
           <li>
             <Link

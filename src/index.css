@@ -250,6 +250,7 @@ button:active {
   margin-bottom: 21px;
 }
 
+
 .menu__backdrop {
   position: absolute;
   background-color: #242424;
@@ -563,7 +564,6 @@ button:active {
 }
 
 /* ------------MODAL---------------- */
-
 
 
 .contact__input,
