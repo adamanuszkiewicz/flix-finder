@@ -1039,6 +1039,11 @@ textarea:focus {
     overflow-x: hidden;
   }
 
+  body.home-page {
+  overflow: hidden;
+  height: 100vh;
+}
+
    #landing, .bg-img {
     overflow: hidden;
     height: 100vh;
