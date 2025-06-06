@@ -1040,11 +1040,18 @@ textarea:focus {
   }
 
   body.home-page {
-  overflow: hidden;
-  height: 100vh;
-}
+    overflow: hidden;
+    height: 100vh;
+  }
 
-   #landing, .bg-img {
+  .movie__container,
+  .movie__row {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  #landing, .bg-img {
     overflow: hidden;
     height: 100vh;
   }
