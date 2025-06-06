@@ -266,7 +266,7 @@ button:active {
   visibility: hidden;
   transition: all 300ms ease;
   opacity: 0;
-  transform: translate(100%);
+  transform: translateX(100%);
 }
 
 .menu--open {
