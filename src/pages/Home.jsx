@@ -76,7 +76,7 @@ const Home = () => {
                   </Link>
                 </li>
                 <li className="menu__list">
-                  <Link to="/"
+                  <Link to="/contact__form"
                     className="menu__link"
                     onClick={() => closeMenu()} 
                   >
