@@ -253,12 +253,14 @@ button:active {
 
 
 .menu__backdrop {
-  position: absolute;
+  position: fixed;
   background-color: #242424;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  width: 100vw;
+  height: 100vh;
   z-index: 99;
   display: flex;
   align-items: center;
@@ -279,7 +281,7 @@ button:active {
 .menu--open .menu__backdrop {
   visibility: visible !important;
   opacity: 1;
-  transform: translate(0);
+  transform: translateX(0);
 }
 
 .menu__links {
@@ -1167,7 +1169,7 @@ textarea:focus {
   }
 
   #searchButton {
-    left: 0;
+    right: 20;
     max-width: 150px;
   }
 
