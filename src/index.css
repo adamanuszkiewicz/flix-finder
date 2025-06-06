@@ -11,7 +11,7 @@ body {
   height: 100%;
   background-color: rgba(71, 86, 101, 0.822);
   max-width: 100vw;
-  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .bg-img {
@@ -621,20 +621,20 @@ textarea:focus {
 
 .contact__container {
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .message__header{
-  height: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .greeting {
-  width: 100%;
-  height: 50vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -779,12 +779,11 @@ textarea:focus {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: auto;
   display: none;
   justify-content: center;
   align-items: center;
   z-index: -1;
-
 }
 
 .modal__overlay--loading {
@@ -965,12 +964,45 @@ textarea:focus {
     font-size: 80px;
   }
 
+  .bg-img {
+    width: 100%;
+    height: 100vh;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXQAguoQsabu4fFyCG0rwQQOGDUoQV5RghrQ&s");
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+  }
+
   .header__para {
     font-size: 20px;
   }
 
-  .message__header {
+  .contact__container {
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .greeting {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  body.modal--open {
+    overflow: visible;
+  }
+
+  .message__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal__overlay {
+    overflow: hidden;
   }
 
  .modal {
@@ -981,10 +1013,12 @@ textarea:focus {
     width: 100%;
     flex-direction: column-reverse;
     border-radius: 0;
+    overflow: hidden;
   }
-  
+
   .modal__half {
     width: 100%;
+    overflow-y: hidden;
   }
 }
 
